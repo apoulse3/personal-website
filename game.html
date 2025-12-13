@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Number Guessing Game</title>
+<style>
+body { font-family: Arial; text-align: center; background-color: #f4f4f4; }
+.game-box { background: white; padding: 20px; width: 300px; margin: auto; border-radius: 10px; }
+</style>
+</head>
+<body>
+<div class="game-box">
+<h1>Guess the Number</h1>
+<p>I'm thinking of a number between 1 and 20</p>
+<input type="number" id="guess">
+<button onclick="checkGuess()">Guess</button>
+<p id="result"></p>
+<a href="scratch.html">Back</a>
+</div>
+
+
+<script>
+const number = Math.floor(Math.random() * 20) + 1;
+function checkGuess() {
+const guess = document.getElementById('guess').value;
+const result = document.getElementById('result');
+if (guess == number) result.textContent = 'Correct! 🎉';
+else result.textContent = 'Try again!';
+}
+</script>
+</body>
+</html>
